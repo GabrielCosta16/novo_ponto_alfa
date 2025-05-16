@@ -1,0 +1,190 @@
+PODS:
+  - ARCore/AugmentedFaces (1.25.0):
+    - ARCore/Base (~> 1.25)
+    - nanopb (~> 2.30908.0)
+  - ARCore/Base (1.25.0):
+    - GoogleDataTransport (~> 9.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.2)
+    - nanopb (~> 2.30908.0)
+  - AWSAuthCore (2.35.0):
+    - AWSCore (= 2.35.0)
+  - AWSCognitoIdentityProvider (2.35.0):
+    - AWSCognitoIdentityProviderASF (= 2.35.0)
+    - AWSCore (= 2.35.0)
+  - AWSCognitoIdentityProviderASF (2.35.0):
+    - AWSCore (= 2.35.0)
+  - AWSCore (2.35.0)
+  - AWSMobileClient (2.35.0):
+    - AWSAuthCore (= 2.35.0)
+    - AWSCognitoIdentityProvider (= 2.35.0)
+    - AWSCognitoIdentityProviderASF (= 2.35.0)
+    - AWSCore (= 2.35.0)
+  - AWSS3 (2.35.0):
+    - AWSCore (= 2.35.0)
+  - AWSSNS (2.35.0):
+    - AWSCore (= 2.35.0)
+  - AWSSQS (2.35.0):
+    - AWSCore (= 2.35.0)
+  - camera_avfoundation (0.0.1):
+    - Flutter
+  - CocoaLumberjack (3.8.5):
+    - CocoaLumberjack/Core (= 3.8.5)
+  - CocoaLumberjack/Core (3.8.5)
+  - CryptoSwift (1.4.1)
+  - Flutter (1.0.0)
+  - flutter_gryfo_lib (4.0.0-beta-22):
+    - Flutter
+    - GryfoCocoapodsLibrary (= 3.50.0-swift-5.9)
+  - GoogleDataTransport (9.4.1):
+    - GoogleUtilities/Environment (~> 7.7)
+    - nanopb (< 2.30911.0, >= 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleToolboxForMac/Defines (2.3.2)
+  - GoogleToolboxForMac/Logger (2.3.2):
+    - GoogleToolboxForMac/Defines (= 2.3.2)
+  - "GoogleToolboxForMac/NSData+zlib (2.3.2)":
+    - GoogleToolboxForMac/Defines (= 2.3.2)
+  - GoogleUtilities/Environment (7.13.3):
+    - GoogleUtilities/Privacy
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Privacy (7.13.3)
+  - GryfoCocoapodsLibrary (3.50.0):
+    - ARCore/AugmentedFaces (~> 1.25.0)
+    - AWSMobileClient (= 2.35.0)
+    - AWSS3 (= 2.35.0)
+    - AWSSNS (= 2.35.0)
+    - AWSSQS (= 2.35.0)
+    - CryptoSwift (= 1.4.1)
+    - Mixpanel-swift (= 4.2.0)
+    - OpenCV
+    - RealmSwift (~> 10.49.2)
+    - Sentry (= 8.20.0)
+    - SVGKit (~> 3.0.0)
+    - TensorFlowLiteSwift (= 2.9.1)
+  - GTMSessionFetcher/Core (1.7.2)
+  - integration_test (0.0.1):
+    - Flutter
+  - Mixpanel-swift (4.2.0):
+    - Mixpanel-swift/Complete (= 4.2.0)
+  - Mixpanel-swift/Complete (4.2.0)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - OpenCV (4.3.0)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - PromisesObjC (2.4.0)
+  - Realm (10.49.3):
+    - Realm/Headers (= 10.49.3)
+  - Realm/Headers (10.49.3)
+  - RealmSwift (10.49.3):
+    - Realm (= 10.49.3)
+  - Sentry (8.20.0):
+    - Sentry/Core (= 8.20.0)
+    - SentryPrivate (= 8.20.0)
+  - Sentry/Core (8.20.0):
+    - SentryPrivate (= 8.20.0)
+  - SentryPrivate (8.20.0)
+  - SVGKit (3.0.0):
+    - CocoaLumberjack (~> 3.0)
+  - TensorFlowLiteC (2.9.1):
+    - TensorFlowLiteC/Core (= 2.9.1)
+  - TensorFlowLiteC/Core (2.9.1)
+  - TensorFlowLiteSwift (2.9.1):
+    - TensorFlowLiteSwift/Core (= 2.9.1)
+  - TensorFlowLiteSwift/Core (2.9.1):
+    - TensorFlowLiteC (= 2.9.1)
+
+DEPENDENCIES:
+  - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_gryfo_lib (from `.symlinks/plugins/flutter_gryfo_lib/ios`)
+  - GryfoCocoapodsLibrary (= 3.50.0-swift-5.9)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+
+SPEC REPOS:
+  http://dev.gryfo.com.br/public_projects/ios-podspec:
+    - GryfoCocoapodsLibrary
+  https://github.com/CocoaPods/Specs:
+    - ARCore
+    - AWSAuthCore
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - AWSS3
+    - AWSSNS
+    - AWSSQS
+    - CocoaLumberjack
+    - CryptoSwift
+    - GoogleDataTransport
+    - GoogleToolboxForMac
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - Mixpanel-swift
+    - nanopb
+    - OpenCV
+    - PromisesObjC
+    - Realm
+    - RealmSwift
+    - Sentry
+    - SentryPrivate
+    - SVGKit
+    - TensorFlowLiteC
+    - TensorFlowLiteSwift
+
+EXTERNAL SOURCES:
+  camera_avfoundation:
+    :path: ".symlinks/plugins/camera_avfoundation/ios"
+  Flutter:
+    :path: Flutter
+  flutter_gryfo_lib:
+    :path: ".symlinks/plugins/flutter_gryfo_lib/ios"
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+
+SPEC CHECKSUMS:
+  ARCore: 27212ab474166e6fb030cf259fb599c0b732d866
+  AWSAuthCore: aa5090b8d86389f958c5b916f14dc218b0c20f8e
+  AWSCognitoIdentityProvider: b4c4d7d78782d62636cb3edfed71472dffe5e6d6
+  AWSCognitoIdentityProviderASF: 295cac5c59c71c1494a3bac437f4c6284b9a73d3
+  AWSCore: f644b48f9508301ba5d2692b5a0c418ca47e1673
+  AWSMobileClient: 6c00da79fef9fcb63311b9b2e2abb7cf45fc7ccd
+  AWSS3: 062c34dd2765593fe105d1a571d567b62bf26854
+  AWSSNS: 6f9c880aecc2e112b8efe2a66893ce9f1fadc984
+  AWSSQS: 54d737b8f552af3dbf8ecacc683d72abed55a5d8
+  camera_avfoundation: 04b44aeb14070126c6529e5ab82cc7c9fca107cf
+  CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
+  CryptoSwift: 0bc800a7e6a24c4fc9ebeab97d44b0d5f73a78bd
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_gryfo_lib: 6d97579e39cd2c02ef1e75a38943215fd7d44fb0
+  GoogleDataTransport: 6c09b596d841063d76d4288cc2d2f42cc36e1e2a
+  GoogleToolboxForMac: 8bef7c7c5cf7291c687cf5354f39f9db6399ad34
+  GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
+  GryfoCocoapodsLibrary: 8459b3d5cff32726871b5d64cf33dfcb2349167a
+  GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
+  integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
+  Mixpanel-swift: e5dd85295923e6a875acf17ccbab8d2ecb10ea65
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  OpenCV: 681e0451c1e54c5930a8922277f817ed5d5ab459
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  Realm: d7cfad3146a7cb9caa00799a216ff0d80c33f36f
+  RealmSwift: 06fb2d9cf029b837fe76136446199906b096470a
+  Sentry: a8d7b373b9f9868442b02a0c425192f693103cbf
+  SentryPrivate: 006b24af16828441f70e2ab6adf241bd0a8ad130
+  SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
+  TensorFlowLiteC: 0a765860195fae345ca7398e33b07c80104c4b61
+  TensorFlowLiteSwift: 0b584ad1fac27c0015609056a5ab4e7692bd1af3
+
+PODFILE CHECKSUM: c570cd73cb559ac126bb8bcb978ebcf829211f43
+
+COCOAPODS: 1.16.2

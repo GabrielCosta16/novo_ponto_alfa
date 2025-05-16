@@ -1,0 +1,32 @@
+import 'package:flutter_gryfo_lib/flutter_gryfo_lib.dart';
+import 'package:intl/intl.dart';
+import 'package:novo_ponto_alfa/domain/model/reconhecimento_facial/global_gryfo_lib.dart';
+import 'package:novo_ponto_alfa/infra/core/enum/enum_reconhecimento_facial.dart';
+import 'package:novo_ponto_alfa/infra/core/preferences/preferencias.dart';
+
+class AutenticacaoGryfo {
+  bool isPrecisaAutenticar() {
+    final dateFormat = DateFormat('dd/MM/yyyy');
+    final hoje = dateFormat.format(DateTime.now());
+
+    if (Preferences.obter(Preference.DATA_ULTIMA_AUTENTICACAO_GRYFO) != hoje) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /// Metodo que ira chamar a API gryfo e devolvera o token
+  Future<Map<dynamic, dynamic>> autenticarEmpresaGryfo() async {
+    SecureStorage.tokenRF.salvar(valorSalvo: _obterToken());
+
+    String token = await SecureStorage.tokenRF.obter();
+
+    return await MyGlobalInstanceGryfo.instance.gryfo
+        .authenticate(_obterToken());
+  }
+
+  String _obterToken() {
+    return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3IiOiJhbGZhLXByb2QiLCJpYXQiOjE3NDcyNjgzMDEsImNvbXBhbnlfaWQiOiI0MDBhYWU1MS01YzdmLTRlODctYmU3OS03NDAzNDM5YzYxYjMifQ.5f9VThQfEgiEagZ8X4Ctb2j6yD5StLOygQPO2o77BaY";
+  }
+}
