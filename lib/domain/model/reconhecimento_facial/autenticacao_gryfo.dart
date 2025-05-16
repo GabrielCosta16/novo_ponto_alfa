@@ -27,6 +27,6 @@ class AutenticacaoGryfo {
   }
 
   String _obterToken() {
-    return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3IiOiJhbGZhLXByb2QiLCJpYXQiOjE3NDcyNjgzMDEsImNvbXBhbnlfaWQiOiI0MDBhYWU1MS01YzdmLTRlODctYmU3OS03NDAzNDM5YzYxYjMifQ.5f9VThQfEgiEagZ8X4Ctb2j6yD5StLOygQPO2o77BaY";
+    return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3IiOiJhbGZhLWRldmVsb3BtZW50IiwiaWF0IjoxNzQ3NDAyMTYyLCJjb21wYW55X2lkIjoiMzI1YzcwYzgtZGNjMS00OTFiLWI4ODEtODZkY2I2NjAyZjg5In0.H7PZzxgu4VDMUN6yVf-1aoAvrSevhScZrHWIYPTpW9Y";
   }
 }

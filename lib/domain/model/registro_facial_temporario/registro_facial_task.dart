@@ -136,19 +136,30 @@ class RegistroFacialTask {
       bool temInternet = await ConexaoInternet.temConexao();
 
       if (temInternet) {
-        await UcEnviarRegistrosFaciaisGryfo().executar(context);
+        List<RegistroFacialTemporario> listaRegistrosImportados =
+            await UcEnviarRegistrosFaciaisGryfo().executar(context);
+        if (listaRegistrosImportados.isNotEmpty) {
+          MyLoadingDialog.atualizarMensagem("Sucesso!");
+
+          await Future.delayed(const Duration(seconds: 1));
+
+          MyLoadingDialog.ocultar();
+
+          String nomesFormatados =
+              listaRegistrosImportados.map((r) => '- ${r.nome}').join('\n');
+          MyAlertDialog.exibirMensagem(
+              "Os seguintes usuários foram importados com sucesso:\n$nomesFormatados",
+              titulo: "Sucesso!", executarApos: () {
+            Navigator.of(context).pop();
+          });
+        }
       }
 
-      MyLoadingDialog.atualizarMensagem("Sucesso!");
-
-      await Future.delayed(const Duration(seconds: 1));
-
-      MyLoadingDialog.ocultar();
-
       if (temInternet == false) {
+        MyLoadingDialog.ocultar();
         MyAlertDialog.exibirOk("Falha",
             """Você não tem conexão com a internet, por favor conecte-se e sincronize os registros.
-            Fique tranquilo o registro facial será enviado quando houver conexão.
+            Fique tranquilo o registro facial será enviado quando realizar uma nova sincronização.
             """, () {
           Navigator.of(context).pop();
         });

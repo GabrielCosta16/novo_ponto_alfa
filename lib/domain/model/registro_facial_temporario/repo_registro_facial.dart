@@ -8,7 +8,8 @@ import 'package:novo_ponto_alfa/infra/core/utils/util.dart';
 import 'package:novo_ponto_alfa/ui/widgets/dialog/my_alert_dialog.dart';
 
 class RepoCadastroFacial {
-  Future<void> enviarRegistroFacialGryfo(BuildContext context) async {
+  Future<List<RegistroFacialTemporario>> enviarRegistroFacialGryfo(
+      BuildContext context) async {
     RegistroFacialTemporarioDAO registroFacialTemporarioDAO =
         RegistroFacialTemporarioDAO();
     await registroFacialTemporarioDAO.init();
@@ -35,13 +36,14 @@ class RepoCadastroFacial {
         headers: {
           'Content-Type': 'application/json',
           'Authorization':
-              'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3IiOiJhbGZhLXByb2QiLCJpYXQiOjE3NDcxODc0MzcsImNvbXBhbnlfaWQiOiI0MDBhYWU1MS01YzdmLTRlODctYmU3OS03NDAzNDM5YzYxYjMifQ.qXwr6KqwJDJOoDzgwOpi8rha4cNyMPOt1mRaxTNwBx4',
+              'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3IiOiJhbGZhLWRldmVsb3BtZW50IiwiaWF0IjoxNzQ3NDAyMTE1LCJleHAiOjE3NDgwMDY5MTV9.deZ6oDjlDWgt_LNJiK-0xc-vgQYOoAKJzwOZYz_XopU',
           'X-Client-Version': '1',
         },
         body: jsonEncode(body),
       );
 
       if (response.statusCode == 200 || response.statusCode == 201) {
+        validarRetornoAPI(response);
         registrosImportados.add(registro);
         registroFacialTemporarioDAO.deleteByExternalId(registro.external_id!);
         printIfDebug("Pessoa adicionada com sucesso.");
@@ -50,15 +52,16 @@ class RepoCadastroFacial {
         printIfDebug("Resposta: ${response.body}");
       }
     }
+    return registrosImportados;
+  }
 
-    if (registrosImportados.length > 0) {
-      String nomesFormatados =
-          registrosImportados.map((r) => '- ${r.nome}').join('\n');
-      MyAlertDialog.exibirMensagem(
-          "Os seguintes usuários foram importados com sucesso:\n$nomesFormatados",
-          titulo: "Sucesso!", executarApos: () {
-        Navigator.of(context).pop();
-      });
+  void validarRetornoAPI(http.Response response) {
+    var jsonRetorno = jsonDecode(response.body);
+    var data = jsonRetorno["data"];
+    if (data["code"] == 200) {
+      return;
     }
+
+    throw Exception(data["message"]);
   }
 }

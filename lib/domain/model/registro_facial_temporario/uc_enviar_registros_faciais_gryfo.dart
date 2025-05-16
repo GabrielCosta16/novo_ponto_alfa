@@ -1,12 +1,13 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:novo_ponto_alfa/domain/model/registro_facial_temporario/mdl_registro_facial_temporario.dart';
 import 'package:novo_ponto_alfa/domain/model/registro_facial_temporario/registro_facial_temporario_dao.dart';
 import 'package:novo_ponto_alfa/domain/model/registro_facial_temporario/repo_registro_facial.dart';
 import 'package:sqflite/sqflite.dart';
 
 class UcEnviarRegistrosFaciaisGryfo {
-  Future executar(BuildContext context) async {
+  Future<List<RegistroFacialTemporario>> executar(BuildContext context) async {
     RegistroFacialTemporarioDAO recTempDao = RegistroFacialTemporarioDAO();
     await recTempDao.init();
 
@@ -15,9 +16,11 @@ class UcEnviarRegistrosFaciaisGryfo {
     final count = Sqflite.firstIntValue(result!) ?? 0;
 
     if(count == 0){
-      return;
+      return [];
     }
 
-    await RepoCadastroFacial().enviarRegistroFacialGryfo(context);
+   var lista = await RepoCadastroFacial().enviarRegistroFacialGryfo(context);
+
+    return lista;
   }
 }

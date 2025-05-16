@@ -41,11 +41,6 @@ class _PageHomeState extends State<PageHome> {
     controllerCadastroFacial = CtrlCadastroFacial();
     controllerReconhecimentoFacial = CtrlReconhecimentoFacial();
     pageController = PageController();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      MyGlobalInstanceGryfo.instance.gryfo
-          .setSettings(controller.settingsCamera());
-    });
   }
 
   @override
@@ -57,6 +52,8 @@ class _PageHomeState extends State<PageHome> {
 
   @override
   Widget build(BuildContext context) {
+    MyGlobalInstanceGryfo.instance.gryfo
+        .setSettings(controller.settingsCamera());
     controller.fragmentContainer = MyGlobalInstanceGryfo.instance.gryfo
         .createFragmentContainer(
             hideDefaultOverlay: false, backgroundColor: Colors.black);
